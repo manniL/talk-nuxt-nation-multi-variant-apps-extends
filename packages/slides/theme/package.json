@@ -1,0 +1,40 @@
+{
+  "name": "@slidev/theme-default",
+  "version": "0.21.2",
+  "engines": {
+    "node": ">=14.0.0",
+    "slidev": ">=0.19.2"
+  },
+  "description": "Default theme for Slidev",
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slidevjs/themes"
+  },
+  "slidev": {
+    "colorSchema": "both",
+    "highlighter": "all",
+    "defaults": {
+      "fonts": {
+        "mono": "Fira Code",
+        "sans": "Avenir Next,Nunito Sans",
+        "local": "Avenir Next"
+      }
+    }
+  },
+  "funding": "https://github.com/sponsors/antfu",
+  "author": "antfu <anthonyfu117@hotmail.com>",
+  "homepage": "https://sli.dev",
+  "bugs": "https://github.com/slidevjs/themes/issues",
+  "dependencies": {
+    "@slidev/types": "^0.22.7",
+    "codemirror-theme-vars": "^0.1.1",
+    "prism-theme-vars": "^0.2.2",
+    "theme-vitesse": "^0.1.12"
+  },
+  "readme": "# @slidev/theme-default\n\n[![NPM version](https://img.shields.io/npm/v/@slidev/theme-default?color=3AB9D4&label=)](https://www.npmjs.com/package/@slidev/theme-default)\n\nThe default theme for [Slidev](https://github.com/slidevjs/slidev).\n\n## Install\n\nAdd the following frontmatter to your `slides.md`. Start Slidev then it will prompt you to install the theme automatically.\n\n<pre><code>---\ntheme: <b>default</b>\n---</code></pre>\n\nLearn more about [how to use a theme](https://sli.dev/themes/use).\n\n## License\n\nMIT License © 2021 [Anthony Fu](https://github.com/antfu)\n"
+}
