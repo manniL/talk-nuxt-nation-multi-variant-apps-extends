@@ -9,21 +9,23 @@ lineNumbers: true
 layout: intro
 ---
 
-# Multi-variant apps with <span class="text-[#00dc82]">Nuxt</span> 3 <logos-nuxt-icon class="text-xl" />
+# Multi-<span class="text-[#80eec0]">variant</span> apps
+
+## with <span class="text-[#00dc82]">Nuxt</span> 3 <logos-nuxt-icon class="text-xl" />
 
 ### NuxtNation 2022
 
 <style>
   h1 {
-    @apply !text-5xl;
+    @apply !text-5xl !mt-16;
   }
 
   h2 {
-    @apply !text-2xl !my-16;
+    @apply !text-3xl !mt-8;
   }
 
   h3 {
-    @apply !text-xl
+    @apply !text-lg !mt-16;
   }
 </style>
 
