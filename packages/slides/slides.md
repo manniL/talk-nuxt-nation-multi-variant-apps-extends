@@ -34,7 +34,7 @@ layout: two-cols
 heading: About me
 ---
 
-<template v-slot:default>
+<template #default>
 <div class="flex flex-col justify-center items-center h-full">
 <img
   class="w-75 rounded-full"
@@ -44,7 +44,7 @@ heading: About me
 </div>
 </template>
 
-<template v-slot:right>
+<template #right>
 <VClicks class="space-y-2 mt-10 text-xl h-full">
 
 * <mdi-account-check class="text-green-100" /> **Web Development Consultant**
@@ -56,6 +56,52 @@ heading: About me
 
 </VClicks>
 </template>
+
+---
+
+# Hook/Intro
+
+* 
+
+# Problem
+  * Difficult scenarios:
+  * White-labeling applications
+    * Branding, text, etc.
+  * Features for different clients that shouldn't be included in all deploys
+    * different Tracking/CRM/eCommerce integration
+    * different business-logic in Frontend in general
+  * Reuse themes / config(s) in multiple projects
+  * Applying DDD design - grouping in modules around domains
+# Solution
+
+* Idea: "Manual" integration via Nuxt hooks (pages:extend, auto import components etc.)
+* Better: `extends`
+  * Extend your app by using
+    * other projects locally
+    * NPM packages
+    * GitHub repos (limitation: no deps install)
+  * Can be multiple!
+* Works for all nuxt-related files
+  * Config
+  * Components
+  * Pages
+  * Modules
+  * ...
+* Layers!
+  * Override support
+  * Referencing each layer
+  * Full HMR and TS support
+  * Auto imports are kept too
+* Caveats
+  * Better use relative aliases when building base (no @/~ because it will be resolved to the actual app path)
+  * Unexplored - only a few usage examples out there
+    * e.g. https://github.com/Atinux/content-wind https://github.com/Atinux/content-wind-demo-online
+  * 
+
+
+# Outro
+
+---
 
 ---
 layout: intro
@@ -70,7 +116,7 @@ layout: two-cols
 heading: Thank you for your attention!
 ---
 
-<template v-slot:default>
+<template #default>
 <div class="flex flex-col justify-center items-center h-full">
 <img
   class="w-75 rounded-full"
@@ -80,7 +126,7 @@ heading: Thank you for your attention!
 </div>
 </template>
 
-<template v-slot:right>
+<template #right>
 
 * <mdi-account-check class="text-green-100" /> **Web Development Consultant**
 * <mdi-microphone /> Speaker & Instructor
