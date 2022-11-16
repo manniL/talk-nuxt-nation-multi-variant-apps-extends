@@ -174,7 +174,7 @@ h1 {
 
 ---
 
-# `extends` - An Overview
+# `extends` - An overview
 
 <VClicks>
 
@@ -233,6 +233,23 @@ Info: Pooya's talk tomorrow about UnJS
 * Layers can override previous layers
 
 </VClicks>
+
+---
+
+<div class="flex justify-center items-center h-100 w-full">
+
+# Demo?!
+
+</div>
+
+<style>
+
+h1 {
+  @apply !text-9xl;
+}
+
+</style>
+
 
 ---
 
@@ -344,6 +361,8 @@ console.log(appConfig.socials.twitter) // TheAlexLichter
 * `app.config.{js,ts}` can be used for runtime
 
 </VClicks>
+
+<img v-click class="h-80 mx-auto" src="/extends-meme.png" alt="Nuxt Extends Meme nut button">
 
 ---
 layout: intro
