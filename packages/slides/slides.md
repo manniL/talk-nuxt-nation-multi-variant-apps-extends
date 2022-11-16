@@ -94,9 +94,9 @@ heading: About me
   * Auto imports are kept too
 * Caveats
   * Better use relative aliases when building base (no @/~ because it will be resolved to the actual app path)
-  * Unexplored - only a few usage examples out there
-    * e.g. https://github.com/Atinux/content-wind https://github.com/Atinux/content-wind-demo-online
-  * 
+  * Unexplored - only a few usage examples out there, e.g.:
+    * https://github.com/Atinux/content-wind https://github.com/Atinux/content-wind-demo-online
+    * https://github.com/nuxt/framework/tree/main/examples/advanced/config-extends
 
 
 # Outro
