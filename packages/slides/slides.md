@@ -61,13 +61,19 @@ heading: About me
 
 # Who of you ever...
 
-<VClicks>
+<VClicks class="space-y-8 mt-16">
 
 * ...wanted to use theming and configs as base of multiple Nuxt projects?
 * ...had to work on a project that had a designated version per customer?
 * ...tried to use Domain Driven Design in their Nuxt projects?
 
 </VClicks>
+
+<!--
+
+* Panel reference
+
+-->
 
 ---
 
@@ -149,30 +155,147 @@ h1 {
 }
 
 </style>
----
-
-# Solution
-
-* Better: `extends`
-  * Extend your app by using
-    * other projects locally
-    * NPM packages
-    * GitHub repos (limitation: no deps install)
-  * Can be multiple!
-* Works for all nuxt-related files
-  * Config
-  * Components
-  * Pages
-  * Modules
-  * ...
-* Layers!
-  * Override support
-  * Referencing each layer
-  * Full HMR and TS support
-  * Auto imports are kept too
-* Caveats
 
 ---
+
+<div class="flex justify-center items-center h-100 w-full">
+
+# `extends`
+
+</div>
+
+<style>
+
+h1 {
+  @apply !text-9xl;
+}
+
+</style>
+
+---
+
+# `extends` - An Overview
+
+<VClicks>
+
+* Extend your Nuxt application *based* on other (partial) applications
+* Can be from local folders, NPM packages or even git repositories*
+* Uses [unjs/c12](https://github.com/unjs/c12) under the hood
+
+</VClicks>
+
+<VClick>
+
+```ts
+// Single base app, e.g. a theme!
+export default defineNuxtConfig({
+  extends: 'content-wind'
+})
+```
+
+</VClick>
+
+<VClick>
+
+```ts
+// Use multiple sources
+export default defineNuxtConfig({
+  extends: [
+    '../base-app',
+    'github:manniL/nuxt-extends-test',
+    '../feature-ecommerce-shopify',
+    '../feature-tracking-plausible'
+  ]
+})
+```
+
+</VClick>
+
+
+<!--
+
+*Limitation for Git repos: No deps will be installed
+
+Info: Pooya's talk tomorrow about UnJS
+
+-->
+
+---
+
+# `extends` - Layers
+
+<VClicks>
+
+* Each source will be transformed into a *layer*
+* Supports all benefits of the *special* Nuxt folders
+* Full IntelliSense, HMR and TS support
+* Auto imports also just work!
+* Layers can override previous layers
+
+</VClicks>
+
+---
+
+# `app.config.{ts,js}`
+
+<VClicks>
+
+* Exposes reactive config for your app
+* Can be updated during *runtime*
+* Will be added to the client (only) - don't add secrets!
+* Full HMR support
+* `useAppConfig` composable to retrieve app config
+* Infers types based on the provided config 
+    * But be typed manually too
+
+</VClicks>
+
+<!--
+
+`app.config.ts` vs runtime config:
+
+Full power of "JavaScript"
+Can be changed without touching business logic - "nuxt.config.ts"
+
+-->
+
+---
+
+# `app.config.{ts,js}` - Example
+
+<Code file="app.config.js">
+
+```ts
+export default defineAppConfig({
+  socials: {
+    twitter: 'TheAlexLichter'
+  }
+})
+```
+
+</Code>
+
+<Code v-click file="SomeComponent.vue">
+
+```vue
+<script setup lang="ts">
+const appConfig = useAppConfig()
+
+console.log(appConfig.socials.twitter) // TheAlexLichter
+</script>
+```
+
+</Code>
+
+<VClicks>
+
+* Can be used for anything you can imagine!
+* e.g.: design tokens, social links, branding texts and more
+
+</VClicks>
+
+---
+
 
 # Caveats
 
@@ -185,10 +308,17 @@ h1 {
   * https://github.com/nuxt-themes/typography
   * https://github.com/nuxt-themes/docus
   * https://github.com/nuxt/framework/tree/main/examples/advanced/config-extends
-
-* Hooks are not yet merged
+* Hooks from `nuxt.config.{ts,js}` are not yet merged - use modules instead.
+* Documentation - will come up in the next days 🙌
 
 </VClicks>
+
+<!--
+
+* Examples as Sebastien announced
+* Working on Docs for extends
+
+-->
 
 ---
 
@@ -196,8 +326,10 @@ h1 {
 
 <VClicks>
   
-  * Named layers - access files from layers via named alias, e.g. `~layerName` - ``~layerName/assets/logo.png`
-  * 
+* Named layers - access files from layers via named alias
+    * e.g. `~layerName` - `~layerName/assets/logo.png`
+* *Your use cases and creations* - let us know what you are missing, and how you utilize `extends`!
+* Follow [#3222](https://github.com/nuxt/framework/issues/3222) for updates of `extends`
 
 </VClicks>
 
@@ -205,8 +337,13 @@ h1 {
 
 # Outro
 
+<VClicks>
+
 * `extends` is a powerful way to supercharge your Nuxt application
-* It can be used for lots of different use cases, i.e. themes, DDD and more!
+* It can be used for lots of different use cases, i.e., themes, DDD and more!
+* `app.config.{js,ts}` can be used for runtime
+
+</VClicks>
 
 ---
 layout: intro
