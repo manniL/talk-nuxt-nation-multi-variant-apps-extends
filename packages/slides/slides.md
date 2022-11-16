@@ -59,22 +59,89 @@ heading: About me
 
 ---
 
-# Hook/Intro
+# Who of you ever...
 
-* 
+<VClicks>
+
+* ...wanted to use theming and configs as base of multiple Nuxt projects?
+* ...had to work on a project that had a designated version per customer?
+* ...tried to use Domain Driven Design in their Nuxt projects?
+
+</VClicks>
+
+---
+layout: intro
+---
+
+<div class="flex justify-center items-center h-100 w-full">
+
+# It's difficult!
+
+</div>
+
+<style>
+
+h1 {
+  @apply !text-9xl;
+}
+
+</style>
+
+---
+
+# Why?
+
+<VClicks>
+
+* Totally possible via Nuxt's hooks and module system
+* Fighting "against" Nuxt's default "flat" folder structure
+* Somewhat tedious setup
+* Has to be repeated for every project
+
+</VClicks>
+
+---
+
+<div class="flex justify-center items-center h-100 w-full">
+
+# It's difficult!
+
+</div>
+
+---
+
+<div class="flex justify-center items-center h-100 w-full">
+
+# It **was** difficult!
+
+</div>
+
+---
 
 # Problem
   * Difficult scenarios:
   * White-labeling applications
     * Branding, text, etc.
+    * https://user-images.githubusercontent.com/36924392/179032453-d1590033-f7bb-4128-99ac-950c1f3341ef.png
   * Features for different clients that shouldn't be included in all deploys
     * different Tracking/CRM/eCommerce integration
     * different business-logic in Frontend in general
   * Reuse themes / config(s) in multiple projects
   * Applying DDD design - grouping in modules around domains
+
+---
+
+# A whitelabeled / multi-variant app
+
+<div class="flex flex-col items-center">
+<img class="h-90 mx-auto" src="https://user-images.githubusercontent.com/36924392/179032453-d1590033-f7bb-4128-99ac-950c1f3341ef.png" alt="Two version of an app with different layouts, branding and slightly different functionalities">
+<a href="https://github.com/nuxt/framework/issues/3222#issuecomment-1184656628" target="_blank" class="text-xs">Source</a>
+</div>
+
+---
+
 # Solution
 
-* Idea: "Manual" integration via Nuxt hooks (pages:extend, auto import components etc.)
 * Better: `extends`
   * Extend your app by using
     * other projects locally
@@ -93,21 +160,67 @@ heading: About me
   * Full HMR and TS support
   * Auto imports are kept too
 * Caveats
-  * Better use relative aliases when building base (no @/~ because it will be resolved to the actual app path)
-  * Unexplored - only a few usage examples out there, e.g.:
-    * https://github.com/Atinux/content-wind https://github.com/Atinux/content-wind-demo-online
-    * https://github.com/nuxt/framework/tree/main/examples/advanced/config-extends
 
+---
+
+# Caveats
+
+<VClicks>
+
+* Aliases are always resolved to the final app
+    * Don't use `@`/`~`/..., instead use relative paths
+* Unexplored - only a few usage examples out there, e.g.:
+  * https://github.com/Atinux/content-wind
+  * https://github.com/nuxt-themes/typography
+  * https://github.com/nuxt-themes/docus
+  * https://github.com/nuxt/framework/tree/main/examples/advanced/config-extends
+
+* Hooks are not yet merged
+
+</VClicks>
+
+---
+
+# Outlook
+
+<VClicks>
+  
+  * Named layers - access files from layers via named alias, e.g. `~layerName` - ``~layerName/assets/logo.png`
+  * 
+
+</VClicks>
+
+---
 
 # Outro
 
----
+* `extends` is a powerful way to supercharge your Nuxt application
+* It can be used for lots of different use cases, i.e. themes, DDD and more!
 
 ---
 layout: intro
 ---
 
-# Thanks a lot to my sponsors!
+<div class="flex justify-center items-center h-100 w-full">
+
+# Now go <span class="text-[#00dc82]">explore</span>!
+
+</div>
+
+<style>
+
+h1 {
+  @apply !text-8xl;
+}
+
+</style>
+
+
+---
+layout: intro
+---
+
+# <span class="text-[#00dc82]">Thanks</span> a lot to my sponsors!
 
 <img src="/sponsors.svg" class="h-70 mx-auto" alt="My GitHub sponsors">
 
