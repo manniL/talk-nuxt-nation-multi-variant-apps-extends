@@ -70,6 +70,15 @@ heading: About me
 </VClicks>
 
 ---
+
+# A whitelabeled / multi-variant app
+
+<div class="flex flex-col items-center">
+<img class="h-90 mx-auto" src="https://user-images.githubusercontent.com/36924392/179032453-d1590033-f7bb-4128-99ac-950c1f3341ef.png" alt="Two version of an app with different layouts, branding and slightly different functionalities">
+<a href="https://github.com/nuxt/framework/issues/3222#issuecomment-1184656628" target="_blank" class="text-xs">Source</a>
+</div>
+
+---
 layout: intro
 ---
 
@@ -93,12 +102,21 @@ h1 {
 
 <VClicks>
 
-* Totally possible via Nuxt's hooks and module system
+* Totally possible via Nuxt's hooks and module system ([already with Nuxt 2](https://vueschool.io/articles/vuejs-tutorials/domain-driven-design-in-nuxt-apps/))
 * Fighting "against" Nuxt's default "flat" folder structure
 * Somewhat tedious setup
-* Has to be repeated for every project
+* Has to be repeated for **every project**
 
 </VClicks>
+
+<img class="h-65 mx-auto" v-click src="https://media2.giphy.com/media/wqbAfFwjU8laXMWZ09/giphy.gif" alt="Stanley from the office rolling his eyes">
+
+<!--
+
+Note: Filip who spoke before wrote a blog post about applying DDD
+
+Wouldn't it be better if could just build an application
+-->
 
 ---
 
@@ -108,6 +126,14 @@ h1 {
 
 </div>
 
+<style>
+
+h1 {
+  @apply !text-9xl;
+}
+
+</style>
+
 ---
 
 <div class="flex justify-center items-center h-100 w-full">
@@ -116,28 +142,13 @@ h1 {
 
 </div>
 
----
+<style>
 
-# Problem
-  * Difficult scenarios:
-  * White-labeling applications
-    * Branding, text, etc.
-    * https://user-images.githubusercontent.com/36924392/179032453-d1590033-f7bb-4128-99ac-950c1f3341ef.png
-  * Features for different clients that shouldn't be included in all deploys
-    * different Tracking/CRM/eCommerce integration
-    * different business-logic in Frontend in general
-  * Reuse themes / config(s) in multiple projects
-  * Applying DDD design - grouping in modules around domains
+h1 {
+  @apply !text-9xl;
+}
 
----
-
-# A whitelabeled / multi-variant app
-
-<div class="flex flex-col items-center">
-<img class="h-90 mx-auto" src="https://user-images.githubusercontent.com/36924392/179032453-d1590033-f7bb-4128-99ac-950c1f3341ef.png" alt="Two version of an app with different layouts, branding and slightly different functionalities">
-<a href="https://github.com/nuxt/framework/issues/3222#issuecomment-1184656628" target="_blank" class="text-xs">Source</a>
-</div>
-
+</style>
 ---
 
 # Solution
